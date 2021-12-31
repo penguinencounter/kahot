@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: blueviolet;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#pin_name {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.textbox {
+    background-color: #8800bb;
+    border: 2px solid white;
+    font-size: 25px;
+    margin: 5px;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    width: max(20%, 250px);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.textbox::placeholder {
+    color: white;
+}
+
+.button {
+    background-color: #006688;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 25px;
+    margin: 5px;
+    padding: 10px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bigtext {
+    color: white;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.disabled {
+    display: none;
+}

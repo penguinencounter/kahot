@@ -33,7 +33,7 @@ def get_token(quizID: str):
     print('Connecting to Kahoot!\'s servers...')
     r = requests.get(uri)
     if r.status_code != 200:
-        raise ConnectionError(f'Error connecting to Kahoot!\'s servers: {r.status_code}')
+        return f'$ERROR {r.status_code}'
     print('Reading data')
     session_token_encoded = r.headers['x-kahoot-session-token']
     challenge_data = r.json()['challenge']

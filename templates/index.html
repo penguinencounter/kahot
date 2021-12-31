@@ -3,11 +3,23 @@
     <head>
         <script src='/static/cometd.js'></script>
         <script src='/static/klogin.js'></script>
+        <script src='/static/ktoken.js'></script>
+        <script src='/static/kgaming.js'></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/static/main.css">
     </head>
-    <body>
-        <button onclick="send_answer(0, comet_g, pin_g);">Send Answer 0</button><br>
-        <button onclick="send_answer(1, comet_g, pin_g);">Send Answer 1</button><br>
-        <button onclick="send_answer(2, comet_g, pin_g);">Send Answer 2</button><br>
-        <button onclick="send_answer(3, comet_g, pin_g);">Send Answer 3</button><br>
+    <body onload="attachEvents();">
+        <div id="enter_details" class="panes">
+            <form id="pin_name">
+                <input class="textbox" id="game_pin" type="text" placeholder="Game PIN" maxlength="10" autofocus autocomplete="off"><br>
+                <input class="textbox" id="username" type="text" placeholder="Username" maxlength="15" autocomplete="off"><br>
+                <input class="button" id="join_button" type="submit" value="Join Game">
+            </form>
+        </div>
+        <div id="loading" class="disabled panes">
+            <span class="bigtext">Loading...</span>
+        </div>
     </body>
 </html>
