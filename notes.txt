@@ -1,0 +1,20 @@
+1. https://kahoot.it/reserve/session/{{quizID}}/
+    response headers: save the x-kahoot-session-token header data
+    response body: save the challenge data (json)
+2. re.search
+    pattern r'^decode\.call\(this, '([a-zA-Z0-9]*)'\); function decode\(message\) \{var offset = ([0-9\+\*\(\)\s]*);'
+    eval group 2 first -> offset
+    then for each char:
+        call ord() on it (or charCodeAt(0) for js)
+        Multiply by position of char (0-index)
+        Add offset
+        Mod 77
+        Add 48
+        call chr() on it (or String.fromCharCode())
+        Append to String
+3. Token prep
+    unbase64 the token
+4. Token masking
+    i, character in enumerate(token):
+        decrypted += XOR character ^ challenge[i%len(challenge)]
+
