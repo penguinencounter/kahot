@@ -8,8 +8,6 @@ def main():
 
 @app.route('/token/<game_pin>')
 def token_gen(game_pin):
-    resp = Response(get_token(game_pin))
-    resp.headers['Server'] = 'Kahot Token Server v1'
-    return resp
+    return get_token(game_pin)
 
 app.run('0.0.0.0', 8008, True)

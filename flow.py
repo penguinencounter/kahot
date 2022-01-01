@@ -33,17 +33,21 @@ def get_token(quizID: str):
     print('Connecting to Kahoot!\'s servers...')
     r = requests.get(uri)
     if r.status_code != 200:
-        return f'$ERROR {r.status_code}'
+        return {"error": r.status_code}
     print('Reading data')
     session_token_encoded = r.headers['x-kahoot-session-token']
-    challenge_data = r.json()['challenge']
+    all_data = r.json()
+    challenge_data = all_data['challenge']
+    del all_data['challenge']
     print('Solving challenge')
     challenge_mask = shenanigans(challenge_data)
     print('Decoding token')
     decode_step_1 = base64.decodebytes(bytes(session_token_encoded, encoding='UTF-8'))
     decode_step_2 = masking(challenge_mask, decode_step_1)
     print(f'Done: {decode_step_2}')
-    return decode_step_2
+    all_data['token'] = decode_step_2
+    print(all_data)
+    return all_data
 
 
 if __name__ == "__main__":

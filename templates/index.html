@@ -11,15 +11,57 @@
         <link rel="stylesheet" href="/static/main.css">
     </head>
     <body onload="attachEvents();">
-        <div id="enter_details" class="panes">
-            <form id="pin_name">
-                <input class="textbox" id="game_pin" type="text" placeholder="Game PIN" maxlength="10" autofocus autocomplete="off"><br>
-                <input class="textbox" id="username" type="text" placeholder="Username" maxlength="15" autocomplete="off"><br>
-                <input class="button" id="join_button" type="submit" value="Join Game">
-            </form>
+        <div class="main_content">
+            <div id="enter_pin" class="panes">
+                <form id="pin">
+                    <input class="textbox" id="game_pin" type="text" placeholder="Game PIN" maxlength="10" autofocus autocomplete="off"><br>
+                    <input class="button" id="join_button" type="submit" value="Next">
+                </form>
+            </div>
+            <div id="enter_name" class="disabled panes">
+                <form id="nick">
+                    <input class="textbox" id="nickname" type="text" placeholder="Nickname" maxlength="15" autofocus autocomplete="off"><br>
+                    <input class="button" id="join_button" type="submit" value="Let's go!">
+                </form>
+            </div>
+            <div id="namerator" class="disabled panes">
+                <div id="namerator_names">
+                </div>
+                <button class="button" onclick="namerator_gen();">Generate Name</button>
+            </div>
+            <div id="loading" class="disabled panes">
+                <span class="bigtext" id="loadtext">Getting some information...</span>
+            </div>
+            <div id="await_start" class="disabled panes">
+                <span class="bigtext">Wait for the game to start!</span>
+                <span id="tip">Tip: The small letters on the buttons are keyboard shortcuts.</span>
+            </div>
+            <div id="in_question_four" class="disabled panes grid grid2by2">
+                <div class="answer_a answer interactable">A
+                    <div class="answer_keybind" id="answer_keybind_a_4">A</div>
+                </div>
+                <div class="answer_b answer interactable">B
+                    <div class="answer_keybind" id="answer_keybind_b_4">S</div>
+                </div>
+                <div class="answer_c answer interactable">C
+                    <div class="answer_keybind" id="answer_keybind_c_4">D</div>
+                </div>
+                <div class="answer_d answer interactable">D
+                    <div class="answer_keybind" id="answer_keybind_d_4">F</div>
+                </div>
+                <div class="disabled answer_na answer"></div>
+            </div>
+            <div id="in_question_two" class="disabled panes grid grid1by2">
+                <div class="answer_a answer interactable">A
+                    <div class="answer_keybind" id="answer_keybind_a_2">A</div>
+                </div>
+                <div class="answer_b answer interactable">B
+                    <div class="answer_keybind" id="answer_keybind_b_2">S</div>
+                </div>
+            </div>
         </div>
-        <div id="loading" class="disabled panes">
-            <span class="bigtext">Loading...</span>
+        <div class="footer">
+            <div id="info_left">Kahot!?</div><div class='expand'></div><div id="info_right">Disconnected</div>
         </div>
     </body>
 </html>
