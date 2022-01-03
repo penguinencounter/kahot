@@ -224,7 +224,8 @@ function autoConnect(game_pin) {
             switchPane("enter_name");
             document.getElementById("nickname").focus();
         } else {
-            console.error("Namerator not supported :(")
+            switchPane("namerator");
+            document.getElementById("namerator_gen_button").focus();
         }
         klogin(game_pin, info.token);
         return true;

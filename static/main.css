@@ -91,8 +91,8 @@ form {
     border-radius: 5px;
     width: max(40%, 400px);
     font-family: 'Montserrat', sans-serif;
-    max-height: 80%;
-    overflow: scroll;
+    max-height: min(60%, 60vh);
+    overflow: auto;
 }
 
 .namerator_item {
