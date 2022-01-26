@@ -19,6 +19,12 @@ function processNickForm(e) {
     addPacketListener("USERNAME_ACCEPTED", function (com, pin, name, content) {
         switchPane("await_start");
     });
+
+    addPacketListener("GET_READY", function(
+        comet, game_pin, name, json_data
+    ) {
+        
+    })
     return false;
 }
 

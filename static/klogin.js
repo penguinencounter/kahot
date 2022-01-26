@@ -84,7 +84,7 @@ let gameInfo = null;
 
 function klogin(game_pin, token) {
     function debugHandler(message) {
-        console.log(message.data);
+        alert(message.data);
     }
     function procC(message) {
         cQueue.push(message.data);
@@ -96,9 +96,9 @@ function klogin(game_pin, token) {
         sQueue.push(message.data);
     }
     let comet = new org.cometd.CometD();
-    comet.websocketEnabled = true
+    comet.websocketEnabled = true;
     comet.configure({
-        'url': 'https://kahoot.it/cometd/'+game_pin+'/'+token
+        'url': 'https://kahot.mileslin.repl.co/cometd/'+game_pin+'/'+token
     });
     comet.handshake();
     comet.addListener('/service/controller', debugHandler);
