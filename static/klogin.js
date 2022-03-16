@@ -98,7 +98,7 @@ function klogin(game_pin, token) {
     let comet = new org.cometd.CometD();
     comet.websocketEnabled = true;
     comet.configure({
-        'url': 'https://kahot.mileslin.repl.co/cometd/'+game_pin+'/'+token
+        'url': 'https://kahoot.it/cometd/'+game_pin+'/'+token
     });
     comet.handshake();
     comet.addListener('/service/controller', debugHandler);
