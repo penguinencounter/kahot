@@ -6,7 +6,7 @@ authors = ["MilesLin <<>>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-Flask = "^2.0.2"
+Flask = "^2.3.2"
 websockets = "^10.1"
 
 [tool.poetry.dev-dependencies]
